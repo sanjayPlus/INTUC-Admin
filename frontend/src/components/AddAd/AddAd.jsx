@@ -89,7 +89,7 @@ function AddAd() {
         headers: { "x-access-token": token },
       })
       .then((res) => {
-        if (res.status === 200) {
+        if (res.status === 200 || res.status === 201) {
           toast.success("Ad added successfully");
           setAd({
             name: "",

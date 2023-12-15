@@ -67,7 +67,7 @@ function AddMandalam() {
         headers: { "x-access-token": token },
       })
       .then((res) => {
-        if (res.status === 200) {
+        if (res.status === 200 || res.status === 201) {
           toast.success("Mandalam added successfully");
           setMandalam({
             name: "",
