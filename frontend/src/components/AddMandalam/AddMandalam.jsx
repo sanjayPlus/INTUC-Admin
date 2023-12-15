@@ -69,11 +69,7 @@ function AddMandalam() {
       .then((res) => {
         if (res.status === 200 || res.status === 201) {
           toast.success("Mandalam added successfully");
-          setMandalam({
-            name: "",
-            description: "",
-            image: null,
-          });
+          setMandalam("");
         }
       })
       .catch((err) => {

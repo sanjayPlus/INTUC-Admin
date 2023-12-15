@@ -69,11 +69,7 @@ function AddSlogan() {
       .then((res) => {
         if (res.status === 200 || res.status === 201) {
           toast.success("Slogan added successfully");
-          setSlogan({
-            name: "",
-            description: "",
-            image: null,
-          });
+          setSlogan("");
         }
       })
       .catch((err) => {
