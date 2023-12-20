@@ -117,6 +117,12 @@ function SideBar() {
               <span className="link-title">All Events</span>
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/all-feedback" className="nav-link">
+              <i className="link-icon" data-feather="box" />
+              <span className="link-title">All FeedBack</span>
+            </Link>
+          </li>
        
     
         </ul>

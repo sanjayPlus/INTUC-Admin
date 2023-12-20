@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 
 function AddSlogan() {
   const [slogan, setSlogan] = useState("");
-
+const [image, setImage] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -60,16 +60,18 @@ function AddSlogan() {
     e.preventDefault();
   
     const token = localStorage.getItem("token");
+    const formData = new FormData();
+    formData.append("slogan", slogan);
+    formData.append("image", image);
     axios
-      .post(`${SERVER_URL}/admin/slogan`,{
-        slogan:slogan
-      }, {
+      .post(`${SERVER_URL}/admin/slogan`,formData, {
         headers: { "x-access-token": token },
       })
       .then((res) => {
         if (res.status === 200 || res.status === 201) {
           toast.success("Slogan added successfully");
           setSlogan("");
+          setImage(null);
         }
       })
       .catch((err) => {
@@ -106,7 +108,20 @@ function AddSlogan() {
                         />
                       </div>
                 
-            
+                      <div className="mb-3">
+                        <label htmlFor="image" className="form-label">
+                          Image
+                        </label>
+                        <input
+                          type="file"
+                          className="form-control"
+                          id="image"
+                          placeholder="image"
+                          name="image"
+                
+                          onChange={(e)=>setImage(e.target.files[0])}
+                        />
+                      </div>
 
                       
                       <button

@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import SERVER_URL from "../../config/SERVER_URL";
 
-function AllSlogans() {
+function AllFeedback() {
   const navigate = useNavigate();
-  const [slogans, setSlogans] = useState([]);
+  const [feedback, setFeedback] = useState([]);
   const [name, setName] = useState("");
   // const [page, setPage] = useState(1);
   useEffect(() => {
@@ -23,13 +23,13 @@ function AllSlogans() {
       .then((res) => {
         if (res.status === 200) {
           axios
-            .get(`${SERVER_URL}/admin/slogan`, {
+            .get(`${SERVER_URL}/admin/feedback`, {
               headers: { "x-access-token": token },
             })
             .then((userResponse) => {
               if (userResponse.status === 200) {
             
-                setSlogans(userResponse?.data);
+                setFeedback(userResponse?.data);
               }
             })
             .catch((err) => {
@@ -45,40 +45,40 @@ function AllSlogans() {
 
   // useEffect(() => {
   //   axios
-  //     .get(`${SERVER_URL}/product/slogans-with-pagination?page=${page}&limit=10`, {
+  //     .get(`${SERVER_URL}/product/feedback-with-pagination?page=${page}&limit=10`, {
   //       headers: { "x-access-token": localStorage.getItem("token") },
   //     })
   //     .then((userResponse) => {
   //       if (userResponse.status === 200) {
-  //           setSlogans(userResponse?.data.slogans);
+  //           setFeedback(userResponse?.data.feedback);
   //       }
   //     })
   //     .catch((err) => {
   //       console.log(err.response.data);
   //     });
   // }, [page]);
-  function handleDelete(id) {
-    axios
-      .delete(
-        `${SERVER_URL}/admin/slogan/${id}`,
-        { headers: { "x-access-token": localStorage.getItem("token") } }
-      )
-      .then((res) => {
-        if (res.status === 200) {
-          setSlogans(slogans?.filter((product) => product._id !== id));
-        }
-      })
-      .catch((err) => {
-        console.log(err.response.data);
-      });
-  }
+//   function handleDelete(id) {
+//     axios
+//       .delete(
+//         `${SERVER_URL}/admin/slogan/${id}`,
+//         { headers: { "x-access-token": localStorage.getItem("token") } }
+//       )
+//       .then((res) => {
+//         if (res.status === 200) {
+//           setFeedback(feedback?.filter((product) => product._id !== id));
+//         }
+//       })
+//       .catch((err) => {
+//         console.log(err.response.data);
+//       });
+//   }
 
   return (
     <>
       <div className="main-wrapper">
         <SideBar />
         <div className="page-wrapper">
-          <NavBar name={name} setName={setName} link="all-slogans" />
+          <NavBar name={name} setName={setName} link="all-feedback" />
           <div className="page-content">
             <div className="row">
               <div className="col-md-12 grid-margin stretch-card">
@@ -90,39 +90,19 @@ function AllSlogans() {
                       <table id="dataTableExample" className="table">
                         <thead>
                           <tr>
-                            <th>Slogan</th>
-                            <th>Image</th>
-                            {/* <th>Edit</th> */}
-                            <th>Delete</th>
+                            <th>Name</th>
+                          
+                            <th>Name</th>
+                            <th>Email</th>
                           </tr>
                         </thead>
                         <tbody>
-                          {slogans?.map((product) => (
+                          {feedback?.map((product) => (
                             <tr key="">
-                              <th>{product?.slogan}</th>
-                              <th><img src={product?.image || "https://www.intuc.net/images/logo.jpg"} style={{width:"10%"}} alt="" /></th>
-                          
+                              <th>{product?.feedback}</th>
+                              <th>{product?.username}</th>
+                              <th>{product?.email}</th>
                               
-
-                             
-                              {/* <th>
-                                <p
-                                  className="btn btn-primary"
-                                  onClick={() =>
-                                    navigate("/edit-product/" + product._id)
-                                  }
-                                >
-                                  Edit
-                                </p>
-                              </th> */}
-                              <th>
-                                <p
-                                  className="btn btn-danger"
-                              onClick={()=>handleDelete(product._id)}
-                                >
-                                  Delete
-                                </p>
-                              </th>
                             </tr>
                           ))}
                         </tbody>
@@ -147,7 +127,7 @@ function AllSlogans() {
                           <li className="page-item active">
                             <a className="page-link">{page}</a>
                           </li>
-                          {slogans.length !== 0 && (
+                          {feedback.length !== 0 && (
                             <li
                               className="page-item"
                               onClick={() => {
@@ -157,11 +137,11 @@ function AllSlogans() {
                               <a className="page-link">{page + 1}</a>
                             </li>
                           )}
-                          {slogans.length !== 0 && (
+                          {feedback.length !== 0 && (
                             <li
                               className="page-item"
                               onClick={() => {
-                                if (slogans.length !== 0) {
+                                if (feedback.length !== 0) {
                                   setPage(page + 1);
                                 }
                               }}
@@ -186,4 +166,5 @@ function AllSlogans() {
   );
 }
 
-export default AllSlogans;
+export default AllFeedback;
+

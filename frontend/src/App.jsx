@@ -21,6 +21,7 @@ import AllMandalam from "./components/AllMandalam/AllMandalam"
 import OneSignal from "./components/OneSignal/OneSignal"
 import AddEvent from "./components/AddEvent/AddEvent"
 import AllEvents from "./components/AllEvents/AllEvents"
+import AllFeedback from "./components/AllFeedbacks/AllFeedbacks"
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
     <Route path="/add-notification" element={<OneSignal/>} />
     <Route path="/add-event" element={<AddEvent/>} />
     <Route path="/all-events" element={<AllEvents/>} />
+    <Route path="/all-feedback" element={<AllFeedback/>} />
   
 
 
