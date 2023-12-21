@@ -22,6 +22,8 @@ import OneSignal from "./components/OneSignal/OneSignal"
 import AddEvent from "./components/AddEvent/AddEvent"
 import AllEvents from "./components/AllEvents/AllEvents"
 import AllFeedback from "./components/AllFeedbacks/AllFeedbacks"
+import AddCarousel from "./components/AddCarousel/AddCarousel"
+import AllCarousel from "./components/AllCarousel/AllCarousel"
 
 function App() {
 
@@ -48,6 +50,8 @@ function App() {
     <Route path="/add-event" element={<AddEvent/>} />
     <Route path="/all-events" element={<AllEvents/>} />
     <Route path="/all-feedback" element={<AllFeedback/>} />
+    <Route path="/all-carousel" element={<AllCarousel/>} />
+    <Route path="/add-carousel" element={<AddCarousel/>} />
   
 
 

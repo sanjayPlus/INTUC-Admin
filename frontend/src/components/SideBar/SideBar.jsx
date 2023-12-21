@@ -123,6 +123,18 @@ function SideBar() {
               <span className="link-title">All FeedBack</span>
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/all-carousel" className="nav-link">
+              <i className="link-icon" data-feather="box" />
+              <span className="link-title">All Carousel</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/add-carousel" className="nav-link">
+              <i className="link-icon" data-feather="box" />
+              <span className="link-title">Add Carousel</span>
+            </Link>
+          </li>
        
     
         </ul>
