@@ -24,6 +24,8 @@ import AllEvents from "./components/AllEvents/AllEvents"
 import AllFeedback from "./components/AllFeedbacks/AllFeedbacks"
 import AddCarousel from "./components/AddCarousel/AddCarousel"
 import AllCarousel from "./components/AllCarousel/AllCarousel"
+import AddPoll from "./components/AddPoll/AddPoll"
+import AllPolls from "./components/AllPolls/AllPolls"
 
 function App() {
 
@@ -52,6 +54,8 @@ function App() {
     <Route path="/all-feedback" element={<AllFeedback/>} />
     <Route path="/all-carousel" element={<AllCarousel/>} />
     <Route path="/add-carousel" element={<AddCarousel/>} />
+    <Route path="/add-poll" element={<AddPoll/>} />
+    <Route path="/all-polls" element={<AllPolls/>} />
   
 
 
