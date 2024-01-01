@@ -16,7 +16,7 @@ function SideBar() {
           <span />
         </div>
       </div>
-      <div className="sidebar-body">
+      <div className="sidebar-body" style={{overflow:"scroll"}}>
         <ul className="nav">
           <li className="nav-item nav-category">Main</li>
 
