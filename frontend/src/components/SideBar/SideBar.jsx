@@ -147,6 +147,12 @@ function SideBar() {
               <span className="link-title">All Polls</span>
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/all-payments" className="nav-link">
+              <i className="link-icon" data-feather="box" />
+              <span className="link-title">All Payments</span>
+            </Link>
+          </li>
        
     
         </ul>
