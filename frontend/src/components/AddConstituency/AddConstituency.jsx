@@ -101,7 +101,7 @@ function AddConstituency() {
       .post(
         `${SERVER_URL}/admin/delete-constituency`,
         {
-          name: name,
+          constituency: name,
           district:district
         },
         { headers: { "x-access-token": localStorage.getItem("token") } }

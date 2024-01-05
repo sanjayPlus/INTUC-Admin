@@ -172,9 +172,9 @@ function AddPanchayath() {
     }
     axios
       .post(
-        `${SERVER_URL}/admin/delete-constituency`,
+        `${SERVER_URL}/admin/delete-panchayath`,
         {
-          name: panchayath,
+          panchayath: name,
           district: district,
           constituency: Constituency,
           assembly: assembly,

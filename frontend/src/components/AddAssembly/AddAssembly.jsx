@@ -131,9 +131,9 @@ function AddAssembly() {
     }
     axios
       .post(
-        `${SERVER_URL}/admin/delete-constituency`,
+        `${SERVER_URL}/admin/delete-assembly`,
         {
-          name: name,
+          assembly: name,
           district: district,
           constituency: Constituency,
         },
