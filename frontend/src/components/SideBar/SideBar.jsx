@@ -153,6 +153,30 @@ function SideBar() {
               <span className="link-title">All Payments</span>
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/add-district" className="nav-link">
+              <i className="link-icon" data-feather="box" />
+              <span className="link-title">Add District</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/add-constituency" className="nav-link">
+              <i className="link-icon" data-feather="box" />
+              <span className="link-title">Add Constituency</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/add-assembly" className="nav-link">
+              <i className="link-icon" data-feather="box" />
+              <span className="link-title">Add Assembly</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/add-panchayath" className="nav-link">
+              <i className="link-icon" data-feather="box" />
+              <span className="link-title">Add Panchayath</span>
+            </Link>
+          </li>
        
     
         </ul>

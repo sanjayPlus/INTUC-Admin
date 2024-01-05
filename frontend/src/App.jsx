@@ -27,6 +27,10 @@ import AllCarousel from "./components/AllCarousel/AllCarousel"
 import AddPoll from "./components/AddPoll/AddPoll"
 import AllPolls from "./components/AllPolls/AllPolls"
 import Payments from "./components/Payments/Payments"
+import AddDistrict from "./components/AddDistrict/AddDistrict"
+import AddConstituency from "./components/AddConstituency/AddConstituency"
+import AddAssembly from "./components/AddAssembly/AddAssembly"
+import AddPanchayath from "./components/AddPanchayath/AddPanchayath"
 
 function App() {
 
@@ -58,6 +62,10 @@ function App() {
     <Route path="/add-poll" element={<AddPoll/>} />
     <Route path="/all-polls" element={<AllPolls/>} />
     <Route path="/all-payments" element={<Payments/>} />
+    <Route path="/add-district" element={<AddDistrict/>} />
+    <Route path="/add-constituency" element={<AddConstituency/>} />
+    <Route path="/add-assembly" element={<AddAssembly/>} />
+    <Route path="/add-panchayath" element={<AddPanchayath/>} />
   
 
 
