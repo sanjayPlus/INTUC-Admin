@@ -112,7 +112,7 @@ function AllCalendar() {
                             <th>Title</th>
                             
                             <th>Description</th>
-                             <th><img src={product?.image || "https://www.intuc.net/images/logo.jpg"} style={{width:"10%"}} alt="" /></th>
+                           <th>Image</th>
                            
                             {/* <th>Edit</th> */}
                             <th>Delete</th>
@@ -123,7 +123,7 @@ function AllCalendar() {
                             <tr key="">
                               <th>{product?.title}</th>
                               <th>{product?.description}</th>
-                              <th>{product?.image}</th>
+                               <th><img src={product?.image || "https://www.intuc.net/images/logo.jpg"} style={{width:"10%"}} alt="" /></th>
                               
 
                              
