@@ -112,6 +112,7 @@ function AllCalendar() {
                             <th>Title</th>
                             
                             <th>Description</th>
+                            <th>Image</th>
                            
                             {/* <th>Edit</th> */}
                             <th>Delete</th>
@@ -122,6 +123,7 @@ function AllCalendar() {
                             <tr key="">
                               <th>{product?.title}</th>
                               <th>{product?.description}</th>
+                              <th>{product?.image}</th>
                               
 
                              

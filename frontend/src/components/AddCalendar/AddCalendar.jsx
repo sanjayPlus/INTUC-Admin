@@ -10,6 +10,7 @@ function AddCalendar() {
   const [date, setDate] = useState(Date.now());
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [image,setImage] = useState("")
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -54,19 +55,23 @@ function AddCalendar() {
   //       reader.readAsDataURL(file);
   //     });
   //   };
-
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]; // Get the first file from the selected files
+   setImage(file);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-
+     const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("date", date);
+    formData.append("image",image);
     const token = localStorage.getItem("token");
     axios
       .post(
         `${SERVER_URL}/admin/calendar-event`,
-        {
-          title: title,
-          description: description,
-          date: date,
-        },
+       formData
+       ,
         {
           headers: { "x-access-token": token },
         }
@@ -141,7 +146,20 @@ function AddCalendar() {
                           onChange={(e) => setDescription(e.target.value)}
                         ></textarea>
                       </div>
-
+                      <div className="mb-3">
+                        <label htmlFor="image" className="form-label">
+                          Image
+                        </label>
+                        <input
+                          type="file"
+                          className="form-control"
+                          id="image"
+                          placeholder="image"
+                          name="image"
+                
+                          onChange={handleFileChange}
+                        />
+                      </div>
                       <button
                         type="submit"
                         className="btn btn-primary me-2 m-2"
